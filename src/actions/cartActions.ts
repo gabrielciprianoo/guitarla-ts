@@ -19,6 +19,14 @@ export function addToCart(state: CartState, item: Guitar): CartState {
       cart: updatedCart,
     };
   }
+
+
+  export function removeFromCart(state: CartState, id : Guitar['id']): CartState {
+    return{
+      ...state,
+      cart : state.cart.filter(guitar => guitar.id !== id)
+    }
+}
   
  
 
